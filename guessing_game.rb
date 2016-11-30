@@ -44,7 +44,7 @@ puts 'Welcome to the Guessing Game! The computer has picked a number between 0 a
 valid_guesses = []
 all_guesses = []
 
-correct_value = rand(100)
+correct_value = (0..100).to_a.shuffle.first
 
 while valid_guesses.count < 5 do
   new_guess = gets.chomp
@@ -68,7 +68,7 @@ while valid_guesses.count < 5 do
     end
   elsif new_guess.to_i == correct_value.to_i
     valid_guesses << new_guess.to_i
-    puts "Wahoo, you win!!! It took you #{guesses.count} valid_guesses"
+    puts "Wahoo, you win!!! It took you #{valid_guesses.count} guesses."
     break
   elsif valid_guesses.count == 4
     valid_guesses << new_guess.to_i
