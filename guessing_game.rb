@@ -57,7 +57,7 @@ while valid_guesses.count < 5 do
   elsif new_guess.to_i < 0
     all_guesses << new_guess
     puts 'Gotta be at least 0...pick something higher'
-  elsif valid_guesses.include?(new_guess)
+  elsif valid_guesses.include?(new_guess.to_i)
     all_guesses << new_guess
     if is_higher?(new_guess.to_i, correct_value)
       puts 'Look, we already told you that\'s a) not it and b) too high. Pay attention next time...'
