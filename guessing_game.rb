@@ -39,12 +39,12 @@ def compare_to_previous(value, valid_guesses, all_guesses, correct_value)
   end
 end
 
-puts 'Welcome to the Guessing Game! The computer has picked a number between 0 and 100. What\'s your guess?'
+puts 'Welcome to the Guessing Game! The computer has picked a number from 1 and 100. What\'s your guess?'
 
 valid_guesses = []
 all_guesses = []
 
-correct_value = (0..100).to_a.shuffle.first
+correct_value = (1..100).to_a.shuffle.first
 
 while valid_guesses.count < 5 do
   new_guess = gets.chomp
@@ -54,9 +54,9 @@ while valid_guesses.count < 5 do
   elsif new_guess.to_i > 100
     all_guesses << new_guess
     puts 'Number should be less than 100...go lower'
-  elsif new_guess.to_i < 0
+  elsif new_guess.to_i < 1
     all_guesses << new_guess
-    puts 'Gotta be at least 0...pick something higher'
+    puts 'Has to be at least 1...pick something higher'
   elsif valid_guesses.include?(new_guess.to_i)
     all_guesses << new_guess
     if is_higher?(new_guess.to_i, correct_value)

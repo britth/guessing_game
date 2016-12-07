@@ -47,7 +47,7 @@ def guessing_game
   all_guesses = []
   guesses_you_get = 10
 
-  correct_value = (0..100).to_a.shuffle.first
+  correct_value = (1..100).to_a.shuffle.first
   while valid_guesses.count < guesses_you_get do
     new_guess = gets.chomp
     if not is_number?(new_guess)
@@ -56,9 +56,9 @@ def guessing_game
     elsif new_guess.to_i > 100
       all_guesses << new_guess
       puts 'Number should be less than 100...go lower.'
-    elsif new_guess.to_i < 0
+    elsif new_guess.to_i < 1
       all_guesses << new_guess
-      puts 'Gotta be at least 0...pick something higher.'
+      puts 'Has to be at least 1...pick something higher.'
     elsif valid_guesses.include?(new_guess.to_i)
       all_guesses << new_guess
       if is_higher?(new_guess.to_i, correct_value)
@@ -106,7 +106,7 @@ while play_again != ""
     puts 'Please enter your name:'
   end
   name = gets.chomp
-  puts 'The computer has picked a number between 0 and 100. What\'s your guess?'
+  puts 'The computer has picked a number between 1 and 100. What\'s your guess?'
   score = guessing_game
   turn += 1
   if score > 0
