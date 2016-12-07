@@ -33,35 +33,10 @@ def fixed_high(h, number)
   end
 end
 
-# def binary_search (a,key)  # a is the array and key is the value to be found
-#     lo = 0
-#     hi= a.length-1
-#
-#     while (lo<=hi)
-#         mid = lo+((hi-lo)/2)
-#
-#         if a[mid] == key
-#             return mid
-#         elsif a[mid] < key
-#             lo=mid+1
-#         else
-#             hi=mid-1
-#         end
-#
-#     end
-#
-#     return "Value not found in array"
-# end
-
-def binary_search (a)  # a is the array and key is the value to be found
-  #lo = 0
+def binary_search (a)
   hi= a.last.to_i
   lo = a.first.to_i
-  # puts hi
-  # puts lo
   mid = lo+((hi-lo)/2)
-
-  #a[mid]
 end
 
 def computer_guessing_game
